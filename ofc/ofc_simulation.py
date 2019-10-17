@@ -72,16 +72,17 @@ def simulation(n, a, steps, force):
         total_force = sum(grid[t][s] for t in range(n) for s in range(n))  # sum of each cell's force
         current_step = current_step + 1
         magnitude_list.append(curr_magnitude)  # Add the number of broken cells in the list
-        # total_force_list.append(total_force) # Add the total force to the list
+        total_force_list.append(total_force) # Add the total force to the list
         # print("Step:", current_step, "Broken:", magnitude)
         # print("Total force", total_force)
 
     # Plot the sorted magnitude list
     magnitude_list.sort()
-    plt.plot(magnitude_list)
-    display = plt.show()
-    return display
+    mag_fig = plt.plot(magnitude_list)
+    plt.savefig("static/plots/mag_fig.png")
 
-# #Plot the grid's total force in each current_step step
-# plt.plot(total_force_list)
-# plt.show()
+    plt.clf()  # Clear the plot for the force plot
+
+    # Plot the grid's total force in each current_step step
+    force_fig = plt.plot(total_force_list)
+    plt.savefig("static/plots/force_fig.png")
