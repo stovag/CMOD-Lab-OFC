@@ -2,20 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <title>OFC</title>
 </head>
 <body>
-     <form action = '{{  url_for("results")}}' method = "post">
-         N:<br>
-         <input type="text" name="n"><br>
-         A:<br>
-         <input type="text" name="A"><br>
-         Steps:<br>
-         <input type="text" name="steps"><br>
-         Force:<br>
-         <input type="text" name="force"><br>
-         <br>
-         <input type="submit" value="Submit">
-     </form>
+    <div class="container">
+        <div class="panel">
+            <h2>Enter data:</h2>
+            <form action = '{{  url_for("results")}}' method = "post">
+                <!-- N:<br> -->
+                <input type="text" name="n" placeholder="N"><br>
+                <!-- A:<br> -->
+                <input type="text" name="A" placeholder="A"><br>
+                <!-- Steps:<br> -->
+                <input type="text" name="steps" placeholder="Steps"><br>
+                <!-- Force:<br> -->
+                <input type="text" name="force" placeholder="Force"><br>
+                <br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
 </body>
 </html>
